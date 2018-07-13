@@ -113,6 +113,9 @@ class BaseList(list):
 
     def __init__(self, list_items, instance, name):
         print("BaseList.__init__")
+        print("list_items: %s" % list_items)
+        print("instance: %s" % instance)
+        print("name: %s" % name)
         Document = _import_class('Document')
         EmbeddedDocument = _import_class('EmbeddedDocument')
 
