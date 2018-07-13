@@ -88,7 +88,6 @@ class BaseDict(dict):
         return super(BaseDict, self).update(*args, **kwargs)
 
     def _mark_as_changed(self, key=None):
-        """
         if hasattr(self._instance, '_mark_as_changed'):
             if key:
                 self._instance._mark_as_changed('%s.%s' % (self._name, key))
@@ -103,6 +102,7 @@ class BaseDict(dict):
                     self._instance._mark_as_changed(self._name)
         except (ReferenceError, TypeError):
             pass
+        """
 
 class BaseList(list):
     """A special list so we can watch any changes."""
