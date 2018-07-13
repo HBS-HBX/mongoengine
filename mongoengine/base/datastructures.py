@@ -119,7 +119,7 @@ class BaseList(list):
         if isinstance(instance, (Document, EmbeddedDocument)):
             self._instance = weakref.proxy(instance)
         self._name = name
-        print("BaseList.__init__  _instance(%s)" % this._instance)
+        print("BaseList.__init__  _instance(%s)" % self._instance)
         super(BaseList, self).__init__(list_items)
 
     def __getitem__(self, key, *args, **kwargs):
