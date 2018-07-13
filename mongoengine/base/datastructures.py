@@ -123,7 +123,7 @@ class BaseList(list):
             self._instance = weakref.proxy(instance)
         self._name = name
         print("BaseList.__init__  _instance(%s)" % self._instance)
-        print("----------------------------\n"
+        print("----------------------------\n")
         super(BaseList, self).__init__(list_items)
 
     def __getitem__(self, key, *args, **kwargs):
