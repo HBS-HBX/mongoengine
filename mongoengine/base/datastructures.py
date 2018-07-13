@@ -112,12 +112,14 @@ class BaseList(list):
     _name = None
 
     def __init__(self, list_items, instance, name):
+        print("BaseList.__init__")
         Document = _import_class('Document')
         EmbeddedDocument = _import_class('EmbeddedDocument')
 
         if isinstance(instance, (Document, EmbeddedDocument)):
             self._instance = weakref.proxy(instance)
         self._name = name
+        print("BaseList.__init__  _instance(%s)" % this._instance)
         super(BaseList, self).__init__(list_items)
 
     def __getitem__(self, key, *args, **kwargs):
@@ -216,7 +218,6 @@ class BaseList(list):
 
 class EmbeddedDocumentList(BaseList):
 
-    @classmethod
     def __match_all(cls, embedded_doc, kwargs):
         """Return True if a given embedded doc matches all the filter
         kwargs. If it doesn't return False.
