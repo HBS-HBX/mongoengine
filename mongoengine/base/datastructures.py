@@ -112,18 +112,12 @@ class BaseList(list):
     _name = None
 
     def __init__(self, list_items, instance, name):
-        print("BaseList.__init__")
-        print("list_items: %s" % list_items)
-        print("instance: %s" % instance)
-        print("name: %s" % name)
         Document = _import_class('Document')
         EmbeddedDocument = _import_class('EmbeddedDocument')
 
         if isinstance(instance, (Document, EmbeddedDocument)):
             self._instance = weakref.proxy(instance)
         self._name = name
-        print("BaseList.__init__  _instance(%s)" % self._instance)
-        print("----------------------------\n")
         super(BaseList, self).__init__(list_items)
 
     def __getitem__(self, key, *args, **kwargs):
