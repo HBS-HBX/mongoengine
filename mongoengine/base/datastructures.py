@@ -216,7 +216,7 @@ class BaseList(list):
 
 class EmbeddedDocumentList(BaseList):
 
-    #classmethod
+    @classmethod
     def __match_all(cls, embedded_doc, kwargs):
         """Return True if a given embedded doc matches all the filter
         kwargs. If it doesn't return False.
