@@ -1,5 +1,4 @@
 import itertools
-import weakref
 
 from bson import DBRef
 import six
@@ -107,7 +106,7 @@ class BaseList(list):
         EmbeddedDocument = _import_class('EmbeddedDocument')
 
         if isinstance(instance, (Document, EmbeddedDocument)):
-            self._instance = weakref.proxy(instance)
+            self._instance = instance
         self._name = name
         super(BaseList, self).__init__(list_items)
 
