@@ -94,6 +94,7 @@ class BaseDict(dict):
             else:
                 self._instance._mark_as_changed(self._name)
 
+
 class BaseList(list):
     """A special list so we can watch any changes."""
 
