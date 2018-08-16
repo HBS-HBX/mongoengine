@@ -22,7 +22,7 @@ class BaseDict(dict):
         EmbeddedDocument = _import_class('EmbeddedDocument')
 
         if isinstance(instance, (Document, EmbeddedDocument)):
-            self._instance = weakref.proxy(instance)
+            self._instance = instance
         self._name = name
         super(BaseDict, self).__init__(dict_items)
 
